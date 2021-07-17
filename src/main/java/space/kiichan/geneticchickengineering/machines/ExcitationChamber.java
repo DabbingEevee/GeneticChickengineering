@@ -98,7 +98,7 @@ public class ExcitationChamber extends AContainer {
         super.tick(this.initBlock(b));
         BlockMenu inv = BlockStorage.getInventory(b);
 
-        if (getMachineProcessor().getOperation(b).getRemainingTicks() > 0) {
+        if (getMachineProcessor().getOperation(b) != null) {
             if (this.findNextRecipe(inv) == null) {
             	getMachineProcessor().endOperation(b);
                 inv.replaceExistingItem(22, this.blackPane);

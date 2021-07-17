@@ -46,10 +46,11 @@ public class PrivateCoop extends AContainer {
     @Override
     protected void tick(Block b) {
         super.tick(b);
-        if (getMachineProcessor().getOperation(b).getRemainingTicks() > 0) {
+        if (getMachineProcessor().getOperation(b) != null) {
             if (Math.random() < 0.25) {
                 Location l = b.getLocation().toCenterLocation();
                 l.getWorld().spawnParticle(Particle.HEART, l.add(0,0.5,0), 2, 0.2, 0, 0.2);
+                //l.getWorld().playSound(b.getLocation(), Sound.ENTITY_CHICKEN_HURT, 10f, Float.parseFloat(getMachineIdentifier()));
             }
             BlockMenu inv = BlockStorage.getInventory(b);
             // Check if parent chickens have been removed
