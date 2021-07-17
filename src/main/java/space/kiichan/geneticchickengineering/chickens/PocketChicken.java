@@ -145,7 +145,7 @@ public class PocketChicken<T extends LivingEntity> extends SimpleSlimefunItem<It
         // Returns a chicken variant of the typing
         // Just used for adding the variants to the guide
 
-        // Make a Pocket Chicken for the "recipe" 
+        // Make a Pocket Chicken for the "recipe"
         ItemStack fakechicken = getItem().clone();
         DNA dna = new DNA(typing);
         String chickType = ChickenTypes.getName(typing);
@@ -161,7 +161,7 @@ public class PocketChicken<T extends LivingEntity> extends SimpleSlimefunItem<It
         fakeicon.setItemMeta(meta);
 
         // Make the fake chicken variant and return it
-        PocketChicken newpc = new PocketChicken(this.plugin, category, fakeicon, this.mutationRate, this.maxMutation, this.displayResources, this.adapterkey, this.dnakey, rt, 
+        PocketChicken newpc = new PocketChicken(this.plugin, category, fakeicon, this.mutationRate, this.maxMutation, this.displayResources, this.adapterkey, this.dnakey, rt,
             new ItemStack[]{
                 null, null, null,
                 null, fakechicken, null,
@@ -256,7 +256,7 @@ public class PocketChicken<T extends LivingEntity> extends SimpleSlimefunItem<It
                     }
                 } else if (this.displayResources && dna.isKnown()) {
                     entity.setCustomName(name);
-                    entity.setCustomNameVisible​(true);
+                    entity.setCustomNameVisible(true);
                 }
             }
         };

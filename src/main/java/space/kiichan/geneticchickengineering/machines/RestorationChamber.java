@@ -72,6 +72,7 @@ public class RestorationChamber extends AContainer  {
         ItemStack recipeSeeds = seeds.clone();
         recipeSeeds.setAmount(toConsume);
         ItemStack recipeChick = chick.clone();
+        recipeChick.setAmount(1);
         this.plugin.heal(recipeChick, toConsume*0.25);
         MachineRecipe recipe = new MachineRecipe(this.healRate*toConsume, new ItemStack[] {recipeSeeds, chick.clone()}, new ItemStack[] {recipeChick});
         if (!InvUtils.fitAll(inv.toInventory(), recipe.getOutput(), getOutputSlots())) {

@@ -3,12 +3,15 @@ package space.kiichan.geneticchickengineering.commands;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.util.StringUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import space.kiichan.geneticchickengineering.GeneticChickengineering;
-import space.kiichan.geneticchickengineering.commands.Commands;
 import space.kiichan.geneticchickengineering.commands.subcommands.Subcommand;
 
 public class Completer implements TabCompleter {
@@ -21,8 +24,9 @@ public class Completer implements TabCompleter {
     }
 
     @Override
-    public List<String> onTabComplete​(CommandSender sender, Command command, String alias, String[] args) {
-        List<String> out = new ArrayList<String>();
+	public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command,
+			@NotNull String alias, @NotNull String[] args) {
+    	List<String> out = new ArrayList<String>();
         if (args.length == 0) {
             for (String name: this.commands.getSubcommands()) {
                 out.add(name);

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>space.kiichan</groupId>
     <artifactId>GeneticChickengineering</artifactId>
-    <version>1.2.1</version>
+    <version>EE1.2.2</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -106,7 +106,7 @@
         <dependency>
             <groupId>com.github.Slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>RC-20</version>
+            <version>RC-25</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -130,5 +130,5 @@
         </dependency>
 
     </dependencies>
-    
+
 </project>

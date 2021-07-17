@@ -97,10 +97,10 @@ public class ExcitationChamber extends AContainer {
     protected void tick(Block b) {
         super.tick(this.initBlock(b));
         BlockMenu inv = BlockStorage.getInventory(b);
-        if (isProcessing(b)) {
+
+        if (getMachineProcessor().getOperation(b).getRemainingTicks() > 0) {
             if (this.findNextRecipe(inv) == null) {
-                progress.remove(b);
-                processing.remove(b);
+            	getMachineProcessor().endOperation(b);
                 inv.replaceExistingItem(22, this.blackPane);
                 this.resources.remove(inv);
             }
@@ -150,7 +150,7 @@ public class ExcitationChamber extends AContainer {
                 if (!InvUtils.fitAll(inv.toInventory(), recipe.getOutput(), getOutputSlots())) {
                     continue;
                 }
-                
+
                 if (this.plugin.painEnabled()) {
                     if (!this.plugin.survivesPain(chick) && !this.plugin.deathEnabled()) {
                         continue;
